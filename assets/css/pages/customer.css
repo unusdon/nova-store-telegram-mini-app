@@ -1,0 +1,72 @@
+/* Nova Kit — Customer page styles (profile, wallet, help, onboarding, showcase, etc.) */
+
+/* Profile hub */
+.profile-head { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); padding: var(--space-6) var(--space-4) var(--space-4); }
+.profile-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-strong)); color: var(--accent-contrast); display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: var(--fw-bold); }
+.profile-name { font-size: var(--fs-xl); font-weight: var(--fw-bold); }
+.profile-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); padding: 0 var(--space-4) var(--space-2); }
+.profile-stat { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-3); text-align: center; }
+.profile-stat strong { display: block; font-size: var(--fs-lg); }
+.profile-stat span { font-size: var(--fs-xs); color: var(--text-muted); }
+
+/* Wallet */
+.wallet-card { margin: var(--space-4); padding: var(--space-5); border-radius: var(--radius-xl); background: linear-gradient(135deg, var(--accent), var(--accent-strong)); color: var(--accent-contrast); }
+.wallet-card small { opacity: 0.85; }
+.wallet-balance { font-size: var(--fs-2xl); font-weight: var(--fw-bold); margin-top: 4px; }
+.wallet-actions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); padding: 0 var(--space-4); }
+.wallet-act { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: var(--space-3) 4px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text); font-size: var(--fs-xs); font-weight: var(--fw-medium); }
+.wallet-act__icon { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+@media (hover: hover) and (pointer: fine) { .wallet-act:hover { border-color: var(--accent); } }
+
+/* Search */
+.search-field { display: flex; align-items: center; gap: var(--space-2); margin: var(--space-3) var(--space-4); height: 46px; padding-inline: var(--space-3); border-radius: var(--radius-md); background: var(--surface); }
+.search-field input { flex: 1; border: none; background: none; outline: none; color: var(--text); }
+.search-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); padding: 0 var(--space-4); }
+
+/* Help accordion */
+.faq { border-bottom: 1px solid var(--border); }
+.faq__q { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: var(--space-4); text-align: start; color: var(--text); font-weight: var(--fw-medium); background: none; }
+.faq__a { max-height: 0; overflow: hidden; transition: max-height var(--dur-med) var(--ease); color: var(--text-muted); }
+.faq.is-open .faq__a { max-height: 320px; }
+.faq__a p { padding: 0 var(--space-4) var(--space-4); }
+.faq__q .ico { transition: transform var(--dur-fast); }
+.faq.is-open .faq__q .ico { transform: rotate(90deg); }
+
+/* About */
+.about { text-align: center; padding: var(--space-7) var(--space-5); }
+.about__logo { font-size: 56px; }
+.about__ver { color: var(--text-faint); font-size: var(--fs-sm); }
+
+/* Onboarding */
+.onb { display: flex; flex-direction: column; height: 100dvh; }
+.onb__track { flex: 1; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.onb__track::-webkit-scrollbar { display: none; }
+.onb__slide { flex: none; width: 100%; scroll-snap-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: var(--space-8) var(--space-6); gap: var(--space-3); }
+.onb__emoji { font-size: 76px; }
+.onb__slide h2 { font-size: var(--fs-2xl); font-weight: var(--fw-bold); }
+.onb__slide p { color: var(--text-muted); max-width: 300px; }
+.onb__foot { padding: var(--space-5); padding-bottom: calc(var(--space-5) + env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: var(--space-4); }
+.onb__dots { display: flex; justify-content: center; gap: var(--space-2); }
+.onb__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: all var(--dur-fast); }
+.onb__dot.is-on { width: 22px; border-radius: var(--radius-pill); background: var(--accent); }
+
+/* Address / payment cards */
+.coupon-card { display: flex; gap: var(--space-3); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-4); margin: var(--space-3) var(--space-4); }
+.coupon-card.is-default { border-color: var(--accent); }
+.coupon-card__body { flex: 1; }
+.coupon-card__default { font-size: var(--fs-xs); color: var(--accent); font-weight: var(--fw-semibold); }
+
+/* Components showcase */
+.showcase-block { padding: var(--space-4); }
+.showcase-block h3 { font-size: var(--fs-sm); text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: var(--space-3); }
+.showcase-row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+
+/* Notifications */
+.notif { display: flex; gap: var(--space-3); padding: var(--space-3) var(--space-4); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); margin: 0 var(--space-4) var(--space-2); }
+.notif.is-unread { background: var(--accent-soft); border-color: var(--accent); }
+.notif__icon { width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--surface); display: flex; align-items: center; justify-content: center; flex: none; }
+.notif__time { color: var(--text-faint); font-size: var(--fs-xs); }
+
+/* Referral */
+.referral-code { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); background: var(--surface); border: 1px dashed var(--accent); border-radius: var(--radius-md); padding: var(--space-4); margin: var(--space-4); font-family: ui-monospace, Menlo, Consolas, monospace; font-weight: var(--fw-bold); letter-spacing: 0.1em; }
+.invitee-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: var(--fw-semibold); flex: none; }

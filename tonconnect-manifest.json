@@ -1,0 +1,7 @@
+{
+  "url": "https://your-store.example.com",
+  "name": "Nova Store",
+  "iconUrl": "https://your-store.example.com/icon-192.png",
+  "termsOfUseUrl": "https://your-store.example.com/legal.html?doc=terms",
+  "privacyPolicyUrl": "https://your-store.example.com/legal.html?doc=privacy"
+}

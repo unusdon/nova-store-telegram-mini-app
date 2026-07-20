@@ -1,0 +1,35 @@
+/*
+ * Nova Kit — Languages (faithful replica of the original languages page)
+ * Header, current-language card, a radio list with flags, and an Apply action.
+ */
+.languages-header { background: var(--bg); padding: 8px var(--space-4); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--border); }
+.languages-header .header-top { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.languages-header .back-button, .languages-header .search-button { background: none; border: none; color: var(--accent); padding: 8px; border-radius: var(--radius-sm); display: flex; cursor: pointer; }
+.languages-header .header-center { text-align: center; flex: 1; }
+.languages-header .page-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+
+.languages-content { padding: var(--space-4); }
+.current-language-section .section-title, .language-options-section .section-title { font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: var(--space-2); }
+.current-language-card { display: flex; align-items: center; gap: var(--space-4); background: var(--accent-soft); border: 1px solid var(--accent); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-6); }
+.current-language-card .language-flag { font-size: 36px; }
+.current-language-card .language-name { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+.current-language-card .language-subtitle { font-size: var(--fs-sm); color: var(--text-muted); }
+.current-indicator { margin-inline-start: auto; color: var(--accent); }
+
+.languages-list { display: flex; flex-direction: column; gap: var(--space-2); }
+.language-item { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-4); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); cursor: pointer; }
+.language-item .language-flag { font-size: 26px; }
+.language-details { flex: 1; }
+.language-details .language-name { font-size: var(--fs-md); font-weight: var(--fw-medium); }
+.language-details .language-subtitle { font-size: var(--fs-sm); color: var(--text-muted); }
+.language-radio { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); flex: none; display: flex; align-items: center; justify-content: center; }
+.language-item.selected .language-radio { border-color: var(--accent); }
+.language-item.selected .language-radio::after { content: ''; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
+
+.apply-section { margin-top: var(--space-5); }
+.apply-note { font-size: var(--fs-sm); color: var(--text-muted); text-align: center; margin-top: var(--space-3); }
+
+@media (hover: hover) and (pointer: fine) {
+  .languages-header .back-button:hover, .languages-header .search-button:hover { background: var(--surface); }
+  .language-item:hover { background: var(--surface); }
+}

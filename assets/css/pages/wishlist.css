@@ -1,0 +1,32 @@
+/*
+ * Nova Kit — Favorites / Wishlist (faithful replica of the original favorites page)
+ * Header + edit, filter tabs, sort row, product grid, and a bulk-actions bar in edit mode.
+ */
+.favorites-header { background: var(--bg); padding: 8px var(--space-4); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--border); }
+.favorites-header .header-top { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.favorites-header .header-center { text-align: center; flex: 1; }
+.favorites-header .page-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+.favorites-header .favorites-subtitle { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; display: block; }
+.favorites-header .edit-button { background: none; border: none; color: var(--accent); font-size: var(--fs-md); font-weight: var(--fw-medium); cursor: pointer; padding: 8px; }
+
+.favorites-content { padding: var(--space-3) 0 var(--space-4); }
+.filter-tabs { display: flex; gap: var(--space-2); padding: 0 var(--space-4) var(--space-3); overflow-x: auto; scrollbar-width: none; }
+.filter-tabs::-webkit-scrollbar { display: none; }
+.filter-tabs .filter-tab { flex: none; padding: 8px 16px; border-radius: var(--radius-pill); background: var(--card); border: 1px solid var(--border); color: var(--text); font-size: var(--fs-sm); font-weight: var(--fw-medium); cursor: pointer; white-space: nowrap; transition: all var(--dur-fast); }
+.filter-tabs .filter-tab.active { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
+
+.sort-section { display: flex; justify-content: space-between; align-items: center; padding: 0 var(--space-4) var(--space-3); }
+.sort-section .results-count { font-size: var(--fs-sm); color: var(--text-muted); }
+.sort-section .sort-select { background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 12px; font-size: var(--fs-sm); }
+
+.favorites-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); padding: 0 var(--space-4); }
+.fav-check { position: absolute; top: var(--space-2); inset-inline-start: var(--space-2); width: 24px; height: 24px; border-radius: 50%; background: var(--bg); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; z-index: 2; }
+.pcard.is-selected .fav-check { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+
+.bulk-actions { position: fixed; bottom: var(--tabbar-h); left: 50%; right: auto; transform: translateX(-50%); width: 100%; max-width: var(--app-max-width); background: var(--bg); border-top: 1px solid var(--border); padding: var(--space-3) var(--space-4); display: flex; align-items: center; gap: var(--space-3); z-index: 16; }
+.bulk-info { font-size: var(--fs-sm); color: var(--text-muted); }
+.bulk-buttons { margin-inline-start: auto; display: flex; gap: var(--space-2); }
+
+@media (hover: hover) and (pointer: fine) {
+  .filter-tabs .filter-tab:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+}

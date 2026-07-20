@@ -1,0 +1,101 @@
+/*
+ * Nova Kit — Order detail / tracking (faithful replica of the original order-view page)
+ * Status card, Details / Tracking / Receipt tabs, timeline, receipt, and dual bottom actions.
+ */
+.order-view-header { background: var(--bg); padding: 8px var(--space-4); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--border); }
+.order-view-header .header-top { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.order-view-header .back-button, .order-view-header .share-button { background: none; border: none; color: var(--accent); padding: 8px; border-radius: var(--radius-sm); display: flex; cursor: pointer; }
+.order-view-header .header-center { text-align: center; flex: 1; }
+.order-view-header .page-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+.order-view-header .order-id { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; display: block; }
+
+.order-content { padding: var(--space-4); }
+
+/* Status card */
+.status-card { background: var(--card); border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-6); display: flex; align-items: center; gap: var(--space-4); }
+.status-icon { font-size: 40px; width: 64px; height: 64px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; flex: none; }
+.status-info { flex: 1; }
+.status-text { font-size: var(--fs-lg); font-weight: var(--fw-semibold); margin-bottom: 4px; }
+.status-description { font-size: var(--fs-sm); color: var(--text-muted); margin-bottom: var(--space-2); }
+.estimated-delivery { font-size: var(--fs-sm); color: var(--accent); font-weight: var(--fw-medium); }
+
+/* Tabs */
+.tab-navigation { display: flex; background: var(--card); border-radius: var(--radius-md); padding: 4px; margin-bottom: var(--space-6); }
+.tab-navigation .tab-button { flex: 1; padding: 10px 16px; border: none; background: transparent; color: var(--text-muted); font-size: var(--fs-sm); font-weight: var(--fw-medium); border-radius: var(--radius-sm); cursor: pointer; transition: all var(--dur-fast); }
+.tab-navigation .tab-button.active { background: var(--accent); color: var(--accent-contrast); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.order-content .section { margin-bottom: var(--space-6); }
+.order-content .section-title { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin-bottom: var(--space-3); }
+
+/* Order items */
+.order-items { display: flex; flex-direction: column; gap: var(--space-2); }
+.order-items .order-item { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.order-items .item-image { width: 60px; height: 60px; border-radius: var(--radius-sm); object-fit: cover; flex: none; }
+.order-items .item-details { flex: 1; min-width: 0; }
+.order-items .item-name { font-size: var(--fs-md); font-weight: var(--fw-medium); margin-bottom: 2px; }
+.order-items .item-quantity { font-size: var(--fs-sm); color: var(--text-muted); }
+.order-items .item-price { font-size: var(--fs-md); font-weight: var(--fw-semibold); text-align: right; }
+
+/* Info + payment cards */
+.info-card { background: var(--card); border-radius: var(--radius-md); padding: var(--space-4); }
+.info-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-3); }
+.info-row:last-child { margin-bottom: 0; }
+.info-label { font-size: var(--fs-sm); color: var(--text-muted); min-width: 80px; }
+.info-value { font-size: var(--fs-sm); text-align: right; flex: 1; word-break: break-word; }
+.payment-card { background: var(--card); border-radius: var(--radius-md); padding: var(--space-4); display: flex; align-items: center; gap: var(--space-3); }
+.payment-icon { font-size: 24px; width: 40px; text-align: center; }
+.payment-method { font-size: var(--fs-md); font-weight: var(--fw-medium); margin-bottom: 2px; }
+.payment-status { font-size: var(--fs-sm); color: var(--accent); font-weight: var(--fw-medium); }
+
+/* Tracking timeline */
+.tracking-timeline { background: var(--card); border-radius: var(--radius-md); padding: var(--space-5); }
+.timeline-item { display: flex; gap: var(--space-4); margin-bottom: var(--space-5); position: relative; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-item:not(:last-child)::after { content: ''; position: absolute; left: 15px; top: 32px; bottom: -20px; width: 2px; background: var(--border); }
+.timeline-item.completed::after { background: var(--accent); }
+.timeline-dot { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--border); color: var(--text-muted); font-size: 14px; flex: none; }
+.timeline-item.completed .timeline-dot { background: var(--accent); color: var(--accent-contrast); }
+.timeline-item.current .timeline-dot { background: var(--info); color: #fff; }
+.timeline-content { flex: 1; padding-top: 4px; }
+.timeline-title { font-size: var(--fs-md); font-weight: var(--fw-medium); margin-bottom: 2px; }
+.timeline-description { font-size: var(--fs-sm); color: var(--text-muted); margin-bottom: 4px; }
+.timeline-time { font-size: var(--fs-xs); color: var(--text-muted); }
+
+/* Receipt */
+.receipt-container { background: var(--card); border-radius: var(--radius-md); padding: var(--space-6); }
+.receipt-header { text-align: center; margin-bottom: var(--space-6); padding-bottom: var(--space-4); border-bottom: 1px solid var(--border); }
+.receipt-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); margin-bottom: 4px; }
+.receipt-date { font-size: var(--fs-sm); color: var(--text-muted); }
+.receipt-items { margin-bottom: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); }
+.receipt-item { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); background: var(--card-alt); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.receipt-item-name { font-size: var(--fs-sm); flex: 1; }
+.receipt-item-qty { font-size: var(--fs-sm); color: var(--text-muted); }
+.receipt-item-price { font-size: var(--fs-sm); font-weight: var(--fw-medium); }
+.receipt-summary { border-top: 1px solid var(--border); padding-top: var(--space-4); margin-bottom: var(--space-5); }
+.summary-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2); }
+.summary-label { color: var(--text-muted); font-size: var(--fs-sm); }
+.summary-value { font-size: var(--fs-sm); }
+.summary-row.total { font-weight: var(--fw-bold); font-size: var(--fs-md); border-top: 1px solid var(--border); padding-top: var(--space-2); margin-top: var(--space-2); }
+.summary-row.total .summary-label, .summary-row.total .summary-value { color: var(--text); font-size: var(--fs-md); }
+.receipt-footer { text-align: center; border-top: 1px solid var(--border); padding-top: var(--space-5); }
+.download-receipt-btn { background: var(--accent); color: var(--accent-contrast); border: none; padding: 12px 20px; border-radius: var(--radius-sm); font-size: var(--fs-sm); font-weight: var(--fw-medium); cursor: pointer; display: inline-flex; align-items: center; gap: var(--space-2); transition: filter var(--dur-fast); }
+
+/* Track-order hero */
+.track-hero { text-align: center; }
+.track-hero__icon { font-size: 48px; margin-bottom: var(--space-2); }
+.track-hero h2 { font-size: var(--fs-xl); font-weight: var(--fw-bold); margin-bottom: var(--space-2); }
+
+/* Bottom actions */
+.bottom-actions { position: fixed; bottom: 0; left: 50%; right: auto; transform: translateX(-50%); width: 100%; max-width: var(--app-max-width); background: var(--bg); border-top: 1px solid var(--border); padding: var(--space-4); padding-bottom: calc(var(--space-4) + env(safe-area-inset-bottom)); display: flex; gap: var(--space-3); z-index: 15; }
+.action-btn { flex: 1; padding: 14px 20px; border-radius: var(--radius-md); font-size: var(--fs-md); font-weight: var(--fw-semibold); cursor: pointer; border: none; transition: all var(--dur-fast) var(--ease); }
+.action-btn.secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+.action-btn.primary { background: var(--accent); color: var(--accent-contrast); }
+
+@media (hover: hover) and (pointer: fine) {
+  .order-view-header .back-button:hover, .order-view-header .share-button:hover { background: var(--surface); }
+  .tab-navigation .tab-button:hover:not(.active) { background: var(--surface); color: var(--text); }
+  .download-receipt-btn:hover, .action-btn.primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
+  .action-btn.secondary:hover { background: var(--surface); }
+}

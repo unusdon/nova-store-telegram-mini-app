@@ -1,0 +1,53 @@
+/*
+ * Nova Kit — Customer feature pages: Gift Cards, Rewards, Recently Viewed, Compare, Q&A.
+ */
+.feat-content { padding: var(--space-4); }
+.feat-content .section-title { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin: var(--space-4) 0 var(--space-3); }
+
+/* Segmented tabs (reused) */
+.seg-tabs { display: flex; gap: 2px; padding: 3px; background: var(--surface); border-radius: var(--radius-md); margin-bottom: var(--space-4); }
+.seg-tabs button { flex: 1; height: 38px; border-radius: calc(var(--radius-md) - 3px); color: var(--text-muted); font-size: var(--fs-sm); font-weight: var(--fw-medium); }
+.seg-tabs button.active { background: var(--card); color: var(--text); box-shadow: var(--shadow-sm); }
+
+/* Gift card visual */
+.giftcard { border-radius: var(--radius-xl); padding: var(--space-5); color: #fff; aspect-ratio: 1.6; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-md); }
+.giftcard__brand { display: flex; align-items: center; gap: var(--space-2); font-weight: var(--fw-semibold); }
+.giftcard__amount { font-size: var(--fs-2xl); font-weight: var(--fw-bold); }
+.giftcard__foot { display: flex; justify-content: space-between; align-items: flex-end; font-size: var(--fs-sm); opacity: 0.9; }
+.gc-designs { display: flex; gap: var(--space-2); margin: var(--space-4) 0; }
+.gc-design { width: 40px; height: 28px; border-radius: 6px; cursor: pointer; border: 2px solid transparent; }
+.gc-design.on { border-color: var(--text); box-shadow: 0 0 0 2px var(--bg) inset; }
+
+/* Shared QR + link (also in finance.css; duplicated for feature pages) */
+.qr-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-6); text-align: center; }
+.pay-link { display: flex; align-items: center; gap: var(--space-2); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-size: var(--fs-sm); }
+.pay-link span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-muted); }
+
+/* Rewards */
+.rewards-hero { text-align: center; padding: var(--space-6) var(--space-4) var(--space-4); }
+.rewards-points { font-size: 44px; font-weight: var(--fw-bold); color: var(--accent); }
+.rewards-tier { font-size: var(--fs-sm); color: var(--text-muted); }
+.tier-bar { height: 8px; background: var(--surface); border-radius: var(--radius-pill); overflow: hidden; margin: var(--space-3) 0 6px; }
+.tier-bar__fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-strong)); }
+.reward-card { display: flex; align-items: center; gap: var(--space-3); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); }
+.reward-card__icon { width: 44px; height: 44px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex: none; }
+.reward-card__cost { font-weight: var(--fw-semibold); color: var(--accent); white-space: nowrap; }
+
+/* Compare */
+.compare-scroll { overflow-x: auto; padding-bottom: var(--space-2); }
+.compare-table { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); gap: var(--space-2); }
+.compare-col { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+.compare-col__media { aspect-ratio: 1; background: var(--surface); position: relative; }
+.compare-col__media img { width: 100%; height: 100%; object-fit: cover; }
+.compare-col__rm { position: absolute; top: 6px; right: 6px; width: 24px; height: 24px; border-radius: 50%; background: var(--overlay); color: #fff; display: flex; align-items: center; justify-content: center; }
+.compare-cell { padding: var(--space-2) var(--space-3); border-top: 1px solid var(--border); font-size: var(--fs-sm); }
+.compare-cell__label { color: var(--text-faint); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.04em; }
+.compare-cell__name { font-weight: var(--fw-semibold); }
+
+/* Q&A */
+.qa-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-3); }
+.qa-q { display: flex; gap: var(--space-2); font-weight: var(--fw-medium); }
+.qa-q__badge { color: var(--accent); font-weight: var(--fw-bold); }
+.qa-a { display: flex; gap: var(--space-2); margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--border); font-size: var(--fs-sm); color: var(--text-muted); }
+.qa-a__badge { color: var(--success); font-weight: var(--fw-bold); }
+.qa-meta { font-size: var(--fs-xs); color: var(--text-faint); margin-top: var(--space-2); }

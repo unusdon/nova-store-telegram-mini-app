@@ -1,0 +1,58 @@
+/*
+ * Nova Kit — Profile (faithful replica of the original profile page)
+ * Avatar + camera, name/email, 3 stats, sectioned option lists (icon + title + subtitle +
+ * badge + arrow), a notifications toggle, and a Sign Out button.
+ */
+.profile-header { background: var(--bg); padding: 8px var(--space-4); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--border); }
+.profile-header .header-top { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.profile-header .back-button, .profile-header .edit-button { background: none; border: none; color: var(--accent); padding: 8px; border-radius: var(--radius-sm); display: flex; cursor: pointer; }
+.profile-header .header-center { text-align: center; flex: 1; }
+.profile-header .page-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+.profile-header .profile-subtitle { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; display: block; }
+
+.profile-content { padding: var(--space-4); }
+
+/* Info card */
+.profile-info-section { background: var(--card); border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-6); text-align: center; }
+.profile-avatar { position: relative; display: inline-block; margin-bottom: var(--space-4); }
+.avatar-image { width: 84px; height: 84px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent-soft); }
+.avatar-image.has-photo { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent); }
+.avatar-photo { width: 100%; height: 100%; object-fit: cover; }
+.avatar-placeholder { font-size: 34px; color: var(--accent); line-height: 1; }
+.change-avatar-btn { position: absolute; bottom: -2px; right: -2px; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: var(--accent-contrast); border: 2px solid var(--card); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-sm); }
+.profile-name { font-size: var(--fs-2xl); font-weight: var(--fw-semibold); margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.profile-verified { color: var(--info); display: inline-flex; }
+.profile-email { font-size: var(--fs-md); color: var(--text-muted); margin-bottom: var(--space-3); }
+.profile-email--action { color: var(--accent); font-weight: var(--fw-medium); }
+.profile-badges { display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-5); flex-wrap: wrap; }
+.profile-badge { display: inline-flex; align-items: center; gap: 4px; height: 30px; padding: 0 12px; border-radius: var(--radius-pill); background: var(--surface); color: var(--text-muted); font-size: var(--fs-xs); font-weight: var(--fw-medium); }
+.profile-badge--link { color: var(--accent); background: var(--accent-soft); }
+.profile-stats { display: flex; justify-content: space-around; gap: var(--space-4); }
+.profile-stats .stat-item { text-align: center; flex: 1; cursor: pointer; }
+.profile-stats .stat-value { font-size: var(--fs-xl); font-weight: var(--fw-semibold); color: var(--accent); margin-bottom: 4px; }
+.profile-stats .stat-label { font-size: var(--fs-xs); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Option sections */
+.option-section { margin-bottom: var(--space-6); }
+.option-section .section-title { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin-bottom: var(--space-3); }
+.options-list { display: flex; flex-direction: column; gap: var(--space-2); }
+.option-item { display: flex; align-items: center; padding: var(--space-3) var(--space-4); cursor: pointer; color: var(--text); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); transition: background var(--dur-fast), border-color var(--dur-fast); }
+.option-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; margin-inline-end: var(--space-4); color: var(--accent); flex: none; transition: transform var(--dur-fast) var(--ease); }
+.option-details { flex: 1; min-width: 0; }
+.option-title { font-size: var(--fs-md); font-weight: var(--fw-medium); margin-bottom: 2px; }
+.option-subtitle { font-size: var(--fs-sm); color: var(--text-muted); }
+.option-badge { min-width: 22px; height: 22px; padding: 0 7px; border-radius: var(--radius-pill); background: var(--accent-soft); color: var(--accent); font-size: var(--fs-xs); font-weight: var(--fw-semibold); display: inline-flex; align-items: center; justify-content: center; margin-inline-start: var(--space-2); }
+.option-arrow { color: var(--text-faint); font-size: 18px; margin-inline-start: var(--space-2); flex: none; }
+
+/* Sign out */
+.logout-section { margin-bottom: var(--space-6); }
+.logout-btn { width: 100%; padding: var(--space-4); background: transparent; border: 2px solid var(--danger); border-radius: var(--radius-md); color: var(--danger); font-size: var(--fs-md); font-weight: var(--fw-medium); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: var(--space-2); transition: all var(--dur-fast); }
+
+@media (hover: hover) and (pointer: fine) {
+  .profile-header .edit-button:hover { background: var(--surface); }
+  .option-item:hover { background: var(--accent-soft); }
+  .option-item:hover .option-arrow { color: var(--accent); }
+  .option-item:hover .option-icon { transform: scale(1.06); }
+  .change-avatar-btn:hover { filter: brightness(1.08); }
+  .logout-btn:hover { background: rgba(255,71,87,0.1); }
+}

@@ -1,0 +1,81 @@
+/*
+ * Nova Kit — Home (storefront dashboard)
+ * Faithfully recreates the original's neat arrangement: header with a segmented pill,
+ * a large balance figure, a quick-action grid, colour-accented category cards, and
+ * trending sparkline cards. Uses design tokens so it themes light/dark and rebrands.
+ */
+
+/* Header */
+.home-header { background: var(--bg); padding: 8px var(--space-4) 20px; }
+.hh-top { display: flex; align-items: center; justify-content: space-between; padding-top: 8px; margin-bottom: 20px; }
+.hh-center { display: flex; flex-direction: column; align-items: center; line-height: 1.15; }
+.hh-title { display: flex; align-items: center; gap: 6px; font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+.hh-sub { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; }
+.hh-content { display: flex; align-items: center; justify-content: space-between; }
+.hh-close { background: none; border: none; color: var(--accent); font-size: var(--fs-lg); font-weight: 400; cursor: pointer; padding: 4px 0; }
+.hh-avatar {
+  width: 40px; height: 40px; border-radius: 50%; flex: none;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.hh-slot { width: 40px; display: flex; justify-content: center; }
+
+/* Segmented pill (Products / Categories) — grey track, active tab is the bg colour */
+.pill { display: flex; background: var(--track); border-radius: var(--radius-lg); padding: 2px; gap: 2px; }
+.pill a {
+  padding: 8px 20px; border-radius: 14px; white-space: nowrap;
+  color: var(--text-muted); font-size: var(--fs-md); font-weight: var(--fw-medium);
+}
+.pill a.is-active { background: var(--bg); color: var(--text); }
+
+/* Balance */
+.store-balance { text-align: center; margin: 40px 0 32px; }
+.store-balance__label { font-size: var(--fs-lg); color: var(--text); font-weight: var(--fw-semibold); margin-bottom: var(--space-2); }
+.store-balance__amount { font-size: 48px; font-weight: var(--fw-bold); letter-spacing: -1px; line-height: 1; }
+.store-balance__meta { margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--accent); font-weight: var(--fw-semibold); }
+
+/* Quick actions — all-green icon tiles (matches the original) */
+.action-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-2); padding: 0 var(--space-4) var(--space-6); }
+.action-item { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); padding: var(--space-4) 4px; border-radius: var(--radius-md); background: var(--card); border: 1px solid var(--border); color: var(--text); transition: background var(--dur-fast), border-color var(--dur-fast); }
+.action-item__icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); color: var(--accent); }
+.action-item__label { font-size: var(--fs-xs); font-weight: var(--fw-semibold); }
+
+/* Section title */
+.home-section { margin: 0 var(--space-4) var(--space-6); }
+.home-section__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-3); }
+.home-section__title { font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--text-muted); letter-spacing: 0.5px; text-transform: uppercase; }
+.home-section__more { color: var(--accent); font-size: var(--fs-md); font-weight: var(--fw-medium); }
+
+/* Category cards */
+.cat-cards { display: flex; flex-direction: column; gap: var(--space-3); }
+.cat-card {
+  display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4);
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md);
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast), transform var(--dur-fast);
+}
+.cat-card:active { transform: scale(0.99); }
+.cat-card__icon { width: 48px; height: 48px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.cat-card__body { flex: 1; min-width: 0; }
+.cat-card__title { display: flex; align-items: center; gap: var(--space-2); font-size: var(--fs-md); font-weight: var(--fw-medium); }
+.cat-card__sub { font-size: var(--fs-sm); color: var(--text-muted); margin: 2px 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cat-card__stats { display: flex; gap: var(--space-4); font-size: var(--fs-xs); color: var(--text-faint); }
+.cat-card__arrow { color: var(--text-faint); font-size: 22px; line-height: 1; }
+.indicator { font-size: 10px; font-weight: var(--fw-semibold); padding: 2px 8px; border-radius: var(--radius-pill); }
+
+/* Trending sparkline cards */
+.trend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.trend-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast), border-color var(--dur-fast); }
+.trend-card:active { transform: scale(0.98); }
+.trend-card__icon { width: 34px; height: 34px; border-radius: 50%; background: var(--surface); display: flex; align-items: center; justify-content: center; font-size: 17px; }
+.trend-card__spark { height: 30px; margin: var(--space-2) 0 var(--space-3); }
+.trend-card__spark path { stroke: var(--success); stroke-width: 2; fill: none; }
+.trend-card__name { font-size: var(--fs-md); font-weight: var(--fw-medium); }
+.trend-card__change { font-size: var(--fs-sm); color: var(--success); margin-top: 2px; }
+.trend-card__price { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin-top: 2px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .action-item:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .cat-card:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .trend-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+  .pill a:hover { color: var(--text); }
+}

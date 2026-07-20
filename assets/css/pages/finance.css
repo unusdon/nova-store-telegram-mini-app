@@ -1,0 +1,47 @@
+/*
+ * Nova Kit — Finance pages (Transactions, Transaction detail, Send, Withdraw, Payment Request)
+ */
+.fin-content { padding: var(--space-4); }
+
+/* Transaction rows */
+.tx-list { display: flex; flex-direction: column; gap: var(--space-2); }
+.tx-row { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); width: 100%; text-align: start; color: var(--text); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); transition: background var(--dur-fast), border-color var(--dur-fast); }
+.tx-row:active { background: var(--surface); }
+.tx-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--surface); display: flex; align-items: center; justify-content: center; font-size: 20px; flex: none; }
+.tx-body { flex: 1; min-width: 0; }
+.tx-title { font-weight: var(--fw-medium); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tx-sub { font-size: var(--fs-sm); color: var(--text-muted); }
+.tx-amount { font-weight: var(--fw-semibold); white-space: nowrap; }
+.tx-amount.in { color: var(--success); }
+.tx-date-group { font-size: var(--fs-sm); color: var(--text-muted); padding: var(--space-4) var(--space-1) var(--space-2); font-weight: var(--fw-medium); }
+
+/* Transaction detail */
+.tx-detail-hero { text-align: center; padding: var(--space-6) var(--space-4) var(--space-4); }
+.tx-detail-hero .tx-icon { width: 72px; height: 72px; font-size: 32px; margin: 0 auto var(--space-3); }
+.tx-detail-amount { font-size: 34px; font-weight: var(--fw-bold); }
+.tx-detail-amount.in { color: var(--success); }
+.tx-detail-status { margin-top: var(--space-2); }
+
+/* Transaction detail meta rows (self-contained) */
+.detail-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-2) var(--space-4); margin: 0 var(--space-4); }
+.detail-row { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; }
+.detail-row:not(:last-child) { border-bottom: 1px solid var(--border); }
+.detail-label { font-size: var(--fs-sm); color: var(--text-muted); flex: none; }
+.detail-value { font-size: var(--fs-sm); text-align: end; word-break: break-word; }
+
+/* Amount entry (send / withdraw / request) */
+.amount-entry { text-align: center; padding: var(--space-6) var(--space-4); }
+.amount-entry__label { font-size: var(--fs-sm); color: var(--text-muted); }
+.amount-input { display: inline-flex; align-items: baseline; justify-content: center; gap: 4px; margin-top: var(--space-2); }
+.amount-input__sym { font-size: 28px; font-weight: var(--fw-semibold); color: var(--text-muted); }
+.amount-input input { font-size: 48px; font-weight: var(--fw-bold); border: none; background: none; outline: none; color: var(--text); width: 5ch; text-align: center; }
+.amount-avail { margin-top: var(--space-2); font-size: var(--fs-sm); color: var(--text-muted); }
+.quick-amounts { display: flex; gap: var(--space-2); justify-content: center; margin-top: var(--space-4); flex-wrap: wrap; }
+.quick-amounts .chip { cursor: pointer; }
+
+/* Payment request result (QR + link) */
+.qr-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-6); text-align: center; margin: var(--space-4); }
+.qr-card img { width: 180px; height: 180px; background: #fff; border-radius: var(--radius-md); padding: 8px; }
+.qr-amount { font-size: var(--fs-2xl); font-weight: var(--fw-bold); margin-top: var(--space-3); }
+.pay-link { display: flex; align-items: center; gap: var(--space-2); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); margin: 0 var(--space-4); font-size: var(--fs-sm); }
+.pay-link span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-muted); }

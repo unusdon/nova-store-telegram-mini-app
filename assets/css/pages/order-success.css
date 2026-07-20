@@ -1,0 +1,7 @@
+/* Nova Kit — Order success styles */
+.success { display: flex; flex-direction: column; align-items: center; text-align: center; padding: var(--space-8) var(--space-5); gap: var(--space-3); min-height: 100dvh; justify-content: center; }
+.success__check { width: 88px; height: 88px; border-radius: 50%; background: var(--accent); color: var(--accent-contrast); display: flex; align-items: center; justify-content: center; animation: pop var(--dur-med) var(--ease); }
+@keyframes pop { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.success h1 { font-size: var(--fs-2xl); font-weight: var(--fw-bold); }
+.success__card { width: 100%; display: flex; flex-direction: column; gap: var(--space-2); margin: var(--space-4) 0; }
+.success__actions { width: 100%; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-2); }

@@ -1,0 +1,11 @@
+# Author-only — never publish to the free repo
+SUBMISSION-CODECANYON.md
+nova-store-html-css-js.zip
+*.zip
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

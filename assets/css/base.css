@@ -1,0 +1,91 @@
+/*
+ * Nova Kit — Base & Reset
+ * Foundational element styling and the mobile "app canvas" layout shared by every page.
+ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--fs-md);
+  line-height: 1.4;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+[dir="rtl"] { direction: rtl; }
+
+h1, h2, h3, h4, p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img, svg { display: block; max-width: 100%; }
+ul { margin: 0; padding: 0; list-style: none; }
+input, select, textarea { font-family: inherit; font-size: var(--fs-md); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* App canvas — a phone-width column centred in the viewport. On real phones the screen is
+   narrower than --app-max-width, so it fills edge-to-edge (native app feel). On desktop/tablet
+   browsers it caps to the phone width and centres, with a soft backdrop + frame (see the media
+   query below) so the mobile UI reads as an intentional device, not a stretched page.
+   padding-bottom clears the fixed tab bar. */
+.app {
+  position: relative;
+  width: 100%;
+  max-width: var(--app-max-width);
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--bg);
+  padding-bottom: 80px;
+}
+.app--no-nav { padding-bottom: 0; }
+
+/* Framed phone column on wider screens. Below this width the column already fills the screen,
+   so no frame is needed. */
+@media (min-width: 520px) {
+  body { background: var(--app-backdrop); }
+  .app {
+    box-shadow: 0 0 0 1px var(--border), 0 24px 70px rgba(15, 30, 50, 0.16);
+  }
+}
+
+.screen { display: block; }
+.screen--no-tabbar { }
+
+.container { padding-inline: var(--space-4); }
+
+/* Utility */
+.stack   { display: flex; flex-direction: column; }
+.row     { display: flex; align-items: center; }
+.row-between { display: flex; align-items: center; justify-content: space-between; }
+.gap-1 { gap: var(--space-1); } .gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); } .gap-4 { gap: var(--space-4); }
+.muted { color: var(--text-muted); }
+.text-accent { color: var(--accent); }
+.text-faint { color: var(--text-faint); }
+.faint { color: var(--text-faint); }
+.text-sm { font-size: var(--fs-sm); }
+.text-lg { font-size: var(--fs-lg); }
+.semibold { font-weight: var(--fw-semibold); }
+.bold { font-weight: var(--fw-bold); }
+.grow { flex: 1; }
+.hidden { display: none !important; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Screen-reader-friendly loading shimmer base */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

@@ -1,0 +1,59 @@
+/*
+ * Nova Kit — Payment Methods (faithful replica of the original payment page)
+ * Header + add, default banner, saved-card rows (brand + last4 + default badge + actions),
+ * digital wallets, and an add-card form sheet.
+ */
+.payment-header { background: var(--bg); padding: 8px var(--space-4); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--border); }
+.payment-header .header-top { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.payment-header .back-button { background: none; border: none; color: var(--accent); padding: 8px; border-radius: var(--radius-sm); display: flex; cursor: pointer; }
+.payment-header .header-center { text-align: center; flex: 1; }
+.payment-header .page-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+.payment-header .payment-subtitle { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; display: block; }
+.payment-header .add-button { width: 40px; height: 40px; border-radius: var(--radius-md); border: none; background: var(--accent); color: var(--accent-contrast); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+
+.payment-content { padding: var(--space-4); }
+
+.default-payment-banner { background: linear-gradient(135deg, var(--accent), var(--accent-strong)); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-6); display: flex; align-items: center; gap: var(--space-4); color: var(--accent-contrast); }
+.default-payment-banner .banner-icon { font-size: 28px; }
+.default-payment-banner .banner-text { font-size: var(--fs-sm); }
+
+.payment-methods-list { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-6); }
+.payment-method-card { background: var(--card); border-radius: var(--radius-lg); padding: var(--space-4); border: 1px solid var(--border); display: flex; align-items: center; gap: var(--space-4); position: relative; }
+.payment-method-card.default { border-color: var(--accent); background: var(--accent-soft); }
+.pm-brand { width: 48px; height: 32px; border-radius: 6px; background: linear-gradient(135deg, #434a54, #1f2733); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 16px; flex: none; }
+.pm-info { flex: 1; min-width: 0; }
+.pm-number { font-size: var(--fs-md); font-weight: var(--fw-medium); }
+.pm-meta { font-size: var(--fs-sm); color: var(--text-muted); }
+.pm-actions { display: flex; align-items: center; gap: var(--space-2); }
+.pm-default-badge { background: var(--accent); color: var(--accent-contrast); padding: 3px 10px; border-radius: var(--radius-pill); font-size: 11px; font-weight: var(--fw-semibold); }
+.pm-action-btn { width: 34px; height: 34px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg); color: var(--text-muted); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all var(--dur-fast); }
+.pm-action-btn.delete:hover { color: var(--danger); border-color: var(--danger); }
+
+.digital-wallets-section { margin-bottom: var(--space-6); }
+.digital-wallets-section .section-title { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin-bottom: var(--space-3); }
+.wallet-options { display: flex; flex-direction: column; gap: var(--space-2); }
+.wallet-item { background: var(--card); border-radius: var(--radius-md); padding: var(--space-4); display: flex; align-items: center; gap: var(--space-4); border: 1px solid var(--border); }
+.wallet-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); background: var(--bg); font-size: 22px; flex: none; }
+.wallet-info { flex: 1; }
+.wallet-name { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin-bottom: 2px; }
+.wallet-status { font-size: var(--fs-sm); color: var(--text-muted); }
+.connect-btn { padding: 8px 16px; border-radius: var(--radius-sm); font-size: var(--fs-sm); font-weight: var(--fw-semibold); cursor: pointer; border: 2px solid var(--border); background: transparent; color: var(--text-muted); transition: all var(--dur-fast); }
+.connect-btn.enabled { border-color: var(--accent); color: var(--accent); }
+.connect-btn.connected { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
+
+.empty-payments { text-align: center; padding: var(--space-8) var(--space-5); color: var(--text-muted); }
+.empty-payments .empty-icon { font-size: 56px; }
+.empty-payments .empty-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); color: var(--text); margin: var(--space-2) 0; }
+.add-payment-btn { background: var(--accent); color: var(--accent-contrast); border: none; padding: 12px 24px; border-radius: var(--radius-md); font-weight: var(--fw-medium); cursor: pointer; margin-top: var(--space-3); }
+
+/* Add-card tabs */
+.payment-type-tabs { display: flex; gap: var(--space-2); margin-bottom: var(--space-4); background: var(--surface); border-radius: var(--radius-md); padding: 4px; }
+.payment-tab { flex: 1; padding: 10px; border: none; background: transparent; color: var(--text-muted); font-size: var(--fs-sm); font-weight: var(--fw-medium); border-radius: var(--radius-sm); cursor: pointer; }
+.payment-tab.active { background: var(--card); color: var(--text); }
+
+@media (hover: hover) and (pointer: fine) {
+  .payment-header .back-button:hover { background: var(--surface); }
+  .payment-header .add-button:hover { filter: brightness(1.08); }
+  .pm-action-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .connect-btn:hover { border-color: var(--accent); color: var(--accent); }
+}

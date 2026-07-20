@@ -1,0 +1,98 @@
+/*
+ * Nova Kit — Design Tokens
+ * ========================
+ * The visual foundation of the kit. The DEFAULT look is dark-first with a signature mint
+ * accent (the palette this kit ships with). A full light ("white") theme is included and
+ * the B/W toggle switches between them. Change values here for a pure-CSS re-theme, or set
+ * `config.theme.accent` to force one brand colour across both themes.
+ *
+ * :root holds the LIGHT theme; [data-theme="dark"] overrides for DARK.
+ * (config.theme.colorScheme defaults to 'dark', so the app opens dark out of the box.)
+ */
+
+:root {
+  /* Brand accent (light theme — Telegram blue on white) */
+  --accent:          #3390EC;
+  --accent-strong:   #2481CC;
+  --accent-soft:     #E8F2FD;
+  --accent-contrast: #FFFFFF;
+
+  /* Secondary status colours */
+  --success: #00A854;
+  --warning: #F59E0B;
+  --danger:  #E5484D;
+  --info:    #2E90FA;
+
+  /* Surfaces (light) */
+  --bg:         #FFFFFF;
+  --app-backdrop: #E7EDF3;      /* page area behind the centered phone column on wide screens */
+  --surface:    #F2F4F5;
+  --card:       #FFFFFF;
+  --card-alt:   #F7F9FA;
+  --text:       #0B0F0D;
+  --text-muted: #667085;
+  --text-faint: #98A2B3;
+  --border:     #E5E8EB;
+  --track:      #E9ECEF;
+  --overlay:    rgba(11, 15, 13, 0.45);
+
+  /* Radius */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-pill: 999px;
+
+  /* Spacing scale (4px base) */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-7: 32px; --space-8: 48px;
+
+  /* Typography (system stack — matches the original's SF Pro look) */
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --fs-xs: 11px; --fs-sm: 13px; --fs-md: 15px; --fs-lg: 17px; --fs-xl: 20px; --fs-2xl: 26px;
+  --fw-regular: 400; --fw-medium: 500; --fw-semibold: 600; --fw-bold: 700;
+  --lh-tight: 1.2; --lh-base: 1.45;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(11, 15, 13, 0.06);
+  --shadow-md: 0 4px 16px rgba(11, 15, 13, 0.08);
+  --shadow-lg: 0 12px 40px rgba(11, 15, 13, 0.16);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 140ms; --dur-med: 240ms;
+
+  /* Layout */
+  --app-max-width: 480px;
+  --appbar-h: 56px;
+  --tabbar-h: 64px;
+}
+
+/* DARK theme — EXACT match to the original palette (#00ff88 neon on #1a1a1a charcoal). */
+:root[data-theme="dark"] {
+  --accent:          #4EA6F5;   /* Telegram blue (brighter for dark bg) */
+  --accent-strong:   #3390EC;
+  --accent-soft:     rgba(51, 144, 236, 0.16);
+  --accent-contrast: #FFFFFF;   /* white text on blue controls */
+
+  --success: #4CAF50;           /* original "completed / delivered" green */
+  --warning: #FF9500;           /* original --wallet-orange */
+  --danger:  #FF4757;           /* original badge red */
+  --info:    #64D2FF;           /* original --wallet-blue */
+
+  --bg:         #1A1A1A;        /* --tg-bg-color */
+  --app-backdrop: #0B0B0D;      /* page area behind the centered phone column on wide screens */
+  --surface:    #2A2A2A;        /* --tg-secondary-bg-color */
+  --card:       #2C2C2E;        /* --card-bg */
+  --card-alt:   #35353A;        /* trending hover */
+  --text:       #FFFFFF;
+  --text-muted: #8E8E93;        /* --tg-hint-color */
+  --text-faint: #636366;
+  --border:     #3A3A3C;        /* --separator-color */
+  --track:      #48484A;        /* --wallet-gray (segmented tracks, icon tiles) */
+  --overlay:    rgba(0, 0, 0, 0.6);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+}

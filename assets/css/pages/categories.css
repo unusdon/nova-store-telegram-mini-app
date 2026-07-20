@@ -1,0 +1,38 @@
+/*
+ * Nova Kit — Categories (faithful replica of the original categories page)
+ * Header + search, type filter, featured grid, and a full category list with counts.
+ */
+.categories-header { background: var(--bg); padding: 8px var(--space-4); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--border); }
+.categories-header .header-top { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.categories-header .back-button, .categories-header .search-button { background: none; border: none; color: var(--accent); padding: 8px; border-radius: var(--radius-sm); display: flex; cursor: pointer; }
+.categories-header .header-center { text-align: center; flex: 1; }
+.categories-header .page-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+
+.categories-content { padding: var(--space-4); }
+.product-type-filter { display: flex; background: var(--card); border-radius: var(--radius-md); padding: 4px; margin-bottom: var(--space-5); }
+.product-type-filter .type-button { flex: 1; padding: 10px 16px; border: none; background: transparent; color: var(--text-muted); font-size: var(--fs-sm); font-weight: var(--fw-medium); border-radius: var(--radius-sm); cursor: pointer; transition: all var(--dur-fast); }
+.product-type-filter .type-button.active { background: var(--accent); color: var(--accent-contrast); }
+
+.categories-section .section-title, .featured-section .section-title { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin-bottom: var(--space-3); }
+.featured-section { margin-bottom: var(--space-6); }
+.featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.featured-category { border-radius: var(--radius-lg); padding: var(--space-5); color: #fff; display: flex; flex-direction: column; gap: var(--space-2); min-height: 110px; justify-content: space-between; }
+.featured-category__icon { font-size: 30px; }
+.featured-category__name { font-weight: var(--fw-semibold); }
+.featured-category__count { font-size: var(--fs-xs); opacity: 0.85; }
+
+.categories-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.category-card { display: flex; align-items: center; gap: var(--space-4); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); transition: all var(--dur-fast) var(--ease); }
+.category-image { width: 52px; height: 52px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 26px; flex: none; }
+.category-info { flex: 1; min-width: 0; }
+.category-name { font-size: var(--fs-md); font-weight: var(--fw-medium); display: flex; align-items: center; gap: var(--space-2); }
+.category-count { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; }
+.category-type { font-size: 10px; font-weight: var(--fw-semibold); padding: 2px 8px; border-radius: var(--radius-pill); }
+.category-arrow { color: var(--text-faint); font-size: 20px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .categories-header .back-button:hover, .categories-header .search-button:hover { background: var(--surface); }
+  .product-type-filter .type-button:hover:not(.active) { background: var(--surface); color: var(--text); }
+  .category-card:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .featured-category:hover { filter: brightness(1.05); }
+}

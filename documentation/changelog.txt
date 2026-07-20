@@ -1,0 +1,65 @@
+==============================================================================
+ Nova Store — Telegram Mini App Store Kit
+ CHANGELOG
+==============================================================================
+
+------------------------------------------------------------------------------
+ v1.0.0  —  2026-07-15   (Initial release)
+------------------------------------------------------------------------------
+
+STOREFRONT (43 pages)
+  - Home dashboard, catalog (2-per-row grid, filters, sort), product detail
+    with gallery, options/variants, quantity, specs, reviews and "frequently
+    bought together".
+  - Cart -> checkout -> order-success flow with promo codes, tax/shipping
+    rules and order notes.
+  - Orders list, order detail, live order tracking, guest track-order lookup,
+    returns & refunds.
+  - Wishlist, recently viewed, product comparison, product Q&A.
+  - Wallet, transactions, send/receive, payment requests (with QR), withdrawals.
+  - Gift cards (buy & redeem, with QR), rewards/points, referrals, coupons.
+  - Downloads for digital products - attached files and/or download links, plus
+    licence keys.
+  - Profile (avatar chooser), personal information (photo upload), addresses,
+    payment methods, settings, notifications, language switcher, help center,
+    support tickets, legal, about.
+  - Onboarding, a styled 404, and a component style-guide page.
+
+ADMIN DASHBOARD (34 pages)
+  - Dashboard with clickable KPIs and a weekly sales chart, full order
+    management, returns, abandoned carts.
+  - Full-page product editor with a multi-image gallery, inventory, categories,
+    collections, and digital keys (paste or import a .txt of keys).
+  - Customers (with loyalty & staff status), Q&A moderation, support threads,
+    content/banners.
+  - Analytics (top selling products), reports, marketing, discounts, gift cards,
+    loyalty tiers, referrals, broadcasts, message templates, activity/audit log.
+  - Wallets (credit/debit adjustments), transactions, payouts, payments,
+    shipping zones, integrations, staff and store settings.
+
+PLATFORM
+  - Config-first: brand, colours, currency, tax/shipping, promo codes,
+    feature flags, navigation, payments and data source all in
+    assets/js/config.js.
+  - Theming: dark-first mint palette with a full light theme and a
+    Black/White toggle, driven by CSS design tokens; optionally follows the
+    user's Telegram theme.
+  - Localization: file-per-language i18n shipping English, Spanish and
+    Arabic (RTL). Add a language by dropping in one file.
+  - Payments: Telegram Stars (XTR), TON Connect and Stripe through a single
+    guarded adapter, plus Cash on Delivery, with a demo-simulate fallback so
+    the storefront completes with zero configuration.
+  - Data: bundled catalog + localStorage mock adapter by default, or point
+    data.source at your own API.
+  - Telegram: guarded WebApp adapter (haptics, back button, theme, invoices)
+    with graceful browser fallbacks - every page is testable outside Telegram.
+  - Build-free: pure HTML, CSS and vanilla ES modules. No framework, bundler
+    or dependencies.
+  - Generated SVG placeholder imagery throughout - no third-party image
+    assets, fully resale-safe.
+  - Includes a no-cache dev server and one-click local preview launchers for
+    Windows and macOS, plus self-contained HTML documentation.
+
+==============================================================================
+ Thank you for your purchase!  -  unusdon
+==============================================================================

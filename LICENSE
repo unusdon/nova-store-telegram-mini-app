@@ -1,0 +1,46 @@
+Nova Store — Telegram Mini App eCommerce UI Kit (HTML/CSS/JS edition)
+Source-Available License
+Copyright (c) 2026 unusdon. All rights reserved.
+
+This is a SOURCE-AVAILABLE license, not an open-source license. The source is
+published publicly so you can read it, learn from it, and build your own
+products with it — but it is not free to redistribute or resell.
+
+------------------------------------------------------------------------------
+YOU MAY
+------------------------------------------------------------------------------
+- View, download, and study the source code.
+- Use it, modified or unmodified, to build and operate YOUR OWN product,
+  store, or Telegram Mini App — including commercial ones you own.
+- Deploy your resulting product to your own hosting.
+- Fork the repository on the hosting platform and submit contributions back.
+
+------------------------------------------------------------------------------
+YOU MAY NOT
+------------------------------------------------------------------------------
+- Redistribute, sublicense, sell, or offer this kit — or any derivative of it
+  that remains substantially this kit (a template, theme, starter, boilerplate,
+  UI kit, or similar) — whether free or paid, on any marketplace or elsewhere.
+- Remove or alter this copyright/authorship notice in redistributed source.
+- Present this work, or a rebranded copy of it, as your own template/kit for
+  others to reuse.
+
+In short: build YOUR product with it — don't repackage IT as a product.
+
+------------------------------------------------------------------------------
+COMMERCIAL / PRODUCTION EDITION
+------------------------------------------------------------------------------
+A production edition (Next.js + React + TypeScript + Tailwind), with the full
+admin panel, priority updates, and support, is available under a separate
+commercial license on CodeCanyon:
+  https://codecanyon.net/user/unusdon
+
+------------------------------------------------------------------------------
+NO WARRANTY
+------------------------------------------------------------------------------
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

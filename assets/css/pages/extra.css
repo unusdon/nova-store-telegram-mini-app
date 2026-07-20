@@ -1,0 +1,37 @@
+/*
+ * Nova Kit — Shared styles for Downloads, Returns, Support, Legal, and Deals pages.
+ */
+.extra-content { padding: var(--space-4); }
+.extra-content .section-title { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin: var(--space-4) 0 var(--space-3); }
+
+/* Download / library items */
+.dl-item { display: flex; align-items: center; gap: var(--space-3); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-3); }
+.dl-item__icon { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 24px; flex: none; }
+.dl-item__info { flex: 1; min-width: 0; }
+.dl-item__name { font-size: var(--fs-md); font-weight: var(--fw-medium); }
+.dl-item__meta { font-size: var(--fs-sm); color: var(--text-muted); }
+.dl-key { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: var(--fs-sm); background: var(--surface); border: 1px dashed var(--accent); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); margin-top: var(--space-2); }
+
+/* Ticket / return rows */
+.ticket-item { display: flex; align-items: center; gap: var(--space-3); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); width: 100%; text-align: start; color: var(--text); }
+.ticket-item__icon { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; flex: none; }
+.ticket-item__body { flex: 1; min-width: 0; }
+.ticket-item__title { font-weight: var(--fw-medium); }
+.ticket-item__sub { font-size: var(--fs-sm); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* (Chat thread styles moved to components.css so admin + customer both get them.) */
+
+/* Legal */
+.legal-tabs { display: flex; gap: 2px; padding: 3px; background: var(--surface); border-radius: var(--radius-md); margin-bottom: var(--space-4); }
+.legal-tabs button { flex: 1; height: 38px; border-radius: calc(var(--radius-md) - 3px); color: var(--text-muted); font-size: var(--fs-sm); font-weight: var(--fw-medium); }
+.legal-tabs button.active { background: var(--card); color: var(--text); box-shadow: var(--shadow-sm); }
+.legal-body { color: var(--text-muted); line-height: 1.6; font-size: var(--fs-md); }
+.legal-body h2 { color: var(--text); font-size: var(--fs-md); font-weight: var(--fw-semibold); margin: var(--space-4) 0 var(--space-2); }
+.legal-body p { margin-bottom: var(--space-3); }
+.legal-updated { font-size: var(--fs-sm); color: var(--text-faint); margin-bottom: var(--space-4); }
+
+/* Deals */
+.deals-hero { margin: var(--space-4); padding: var(--space-5); border-radius: var(--radius-xl); background: linear-gradient(135deg, var(--danger), #c62f3c); color: #fff; text-align: center; }
+.deals-hero h2 { font-size: var(--fs-2xl); font-weight: var(--fw-bold); }
+.deals-countdown { display: inline-flex; gap: var(--space-2); margin-top: var(--space-3); }
+.deals-countdown span { background: rgba(255,255,255,0.2); border-radius: var(--radius-sm); padding: 6px 10px; font-weight: var(--fw-bold); font-variant-numeric: tabular-nums; }

@@ -1,0 +1,88 @@
+/*
+ * Nova Kit — Checkout (faithful replica of the original checkout page)
+ * Single-form flow: order summary, shipping form, delivery options, payment methods
+ * (incl. crypto), order notes, terms, a fixed Place Order bar, and processing/success modals.
+ */
+.checkout-header { background: var(--bg); padding: 8px var(--space-4); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--border); }
+.checkout-header .header-top { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.checkout-header .back-button { background: none; border: none; color: var(--accent); padding: 8px; border-radius: var(--radius-sm); display: flex; cursor: pointer; }
+.checkout-header .header-center { text-align: center; flex: 1; }
+.checkout-header .page-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+.checkout-header .step-indicator { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; display: block; }
+.checkout-header .header-spacer { width: 40px; }
+
+.checkout-content { padding: var(--space-4); }
+.checkout-content > div { margin-bottom: var(--space-6); }
+.checkout-content .section-title { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin-bottom: var(--space-3); }
+
+/* Order summary */
+.order-summary-section .order-items { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-3); }
+.co-item { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4); background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.co-item__name { flex: 1; font-size: var(--fs-sm); }
+.co-item__qty { font-size: var(--fs-sm); color: var(--text-muted); }
+.co-item__price { font-size: var(--fs-sm); font-weight: var(--fw-semibold); }
+.order-total .total-row { display: flex; justify-content: space-between; align-items: center; background: var(--card); border-radius: var(--radius-md); padding: var(--space-4); }
+.order-total .total-label { font-size: var(--fs-md); font-weight: var(--fw-semibold); }
+.order-total .total-amount { font-size: var(--fs-lg); font-weight: var(--fw-bold); color: var(--accent); }
+
+/* Forms */
+.form-group { margin-bottom: var(--space-4); }
+.form-label { display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); margin-bottom: var(--space-2); }
+.form-input, .form-select, .form-textarea { width: 100%; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 16px; color: var(--text); font-size: var(--fs-md); transition: border-color var(--dur-fast); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--accent); }
+.form-row { display: flex; gap: var(--space-3); }
+.form-row .form-group { flex: 1; }
+.form-textarea { resize: vertical; min-height: 80px; }
+
+/* Delivery + payment options */
+.delivery-options, .payment-options, .crypto-options, .manual-options { display: flex; flex-direction: column; gap: var(--space-2); }
+.delivery-option, .payment-option { display: flex; align-items: center; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: var(--space-4); cursor: pointer; transition: all var(--dur-fast); position: relative; }
+.delivery-option input, .payment-option input { position: absolute; opacity: 0; pointer-events: none; }
+.delivery-option:has(input:checked), .payment-option:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.option-content { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); width: 100%; }
+.payment-option .option-content, .crypto-option .option-content { display: flex; align-items: center; gap: var(--space-3); }
+.option-info { flex: 1; min-width: 0; }
+.option-name { font-size: var(--fs-md); font-weight: var(--fw-medium); margin-bottom: 2px; }
+.option-description { font-size: var(--fs-sm); color: var(--text-muted); }
+.option-price { font-size: var(--fs-md); font-weight: var(--fw-semibold); }
+.payment-icon { font-size: 22px; width: 40px; text-align: center; flex: none; }
+.crypto-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; flex: none; }
+.crypto-icon.bitcoin { background: #f7931a; } .crypto-icon.ethereum { background: #627eea; }
+.crypto-icon.litecoin { background: #345d9d; } .crypto-icon.usdt { background: #26a17b; }
+.crypto-icon.monero { background: #ff6600; }
+.crypto-rate { font-size: var(--fs-xs); color: var(--text-muted); white-space: nowrap; }
+
+/* Terms checkbox */
+.checkbox-container { display: flex; align-items: flex-start; gap: var(--space-3); cursor: pointer; }
+.checkbox-container input { position: absolute; opacity: 0; }
+.checkmark { width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--border); background: var(--card); flex: none; display: flex; align-items: center; justify-content: center; transition: all var(--dur-fast); }
+.checkbox-container input:checked + .checkmark { background: var(--accent); border-color: var(--accent); }
+.checkbox-container input:checked + .checkmark::after { content: '✓'; color: var(--accent-contrast); font-size: 14px; font-weight: 700; }
+.checkbox-text { font-size: var(--fs-sm); color: var(--text-muted); line-height: 1.4; }
+.terms-link { color: var(--accent); }
+
+/* Bottom bar */
+.bottom-actions { position: fixed; bottom: 0; left: 50%; right: auto; transform: translateX(-50%); width: 100%; max-width: var(--app-max-width); background: var(--bg); border-top: 1px solid var(--border); padding: var(--space-4); padding-bottom: calc(var(--space-4) + env(safe-area-inset-bottom)); display: flex; align-items: center; gap: var(--space-4); z-index: 15; }
+.bottom-actions .total-display { display: flex; flex-direction: column; }
+.bottom-actions .total-label { font-size: var(--fs-xs); color: var(--text-muted); }
+.bottom-actions .total-amount { font-size: var(--fs-xl); font-weight: var(--fw-semibold); }
+.place-order-btn { flex: 1; background: var(--accent); color: var(--accent-contrast); border: none; padding: 14px 24px; border-radius: var(--radius-md); font-size: var(--fs-md); font-weight: var(--fw-semibold); cursor: pointer; transition: all var(--dur-fast) var(--ease); }
+.place-order-btn:disabled { opacity: 0.5; pointer-events: none; }
+
+/* Modals */
+.co-modal { position: fixed; inset: 0; z-index: 60; background: var(--overlay); display: flex; align-items: center; justify-content: center; padding: var(--space-5); }
+.co-modal .modal-content { background: var(--card); border-radius: var(--radius-xl); padding: var(--space-7) var(--space-6); text-align: center; max-width: 340px; width: 100%; }
+.co-spinner { width: 48px; height: 48px; border-radius: 50%; border: 3px solid var(--border); border-top-color: var(--accent); margin: 0 auto var(--space-4); animation: co-spin 0.8s linear infinite; }
+@keyframes co-spin { to { transform: rotate(360deg); } }
+.processing-title, .success-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); margin-bottom: var(--space-2); }
+.processing-description, .success-description { font-size: var(--fs-sm); color: var(--text-muted); }
+.success-icon { font-size: 56px; margin-bottom: var(--space-3); }
+.success-actions { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-5); }
+.track-order-btn { background: var(--accent); color: var(--accent-contrast); border: none; padding: 12px; border-radius: var(--radius-md); font-weight: var(--fw-semibold); cursor: pointer; }
+.success-actions .continue-shopping-btn { background: none; border: 1px solid var(--border); color: var(--text); padding: 12px; border-radius: var(--radius-md); font-weight: var(--fw-medium); cursor: pointer; }
+
+@media (hover: hover) and (pointer: fine) {
+  .checkout-header .back-button:hover { background: var(--surface); }
+  .delivery-option:hover, .payment-option:hover { border-color: var(--accent); }
+  .place-order-btn:hover, .track-order-btn:hover { filter: brightness(1.06); }
+}

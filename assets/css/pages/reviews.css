@@ -1,0 +1,51 @@
+/*
+ * Nova Kit — Product reviews (faithful replica of the original reviews section)
+ * Rating summary with per-star bars, review cards, and a write-review action.
+ */
+.reviews-page-header { background: var(--bg); padding: 8px var(--space-4); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--border); }
+.reviews-page-header .header-top { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.reviews-page-header .back-button { background: none; border: none; color: var(--accent); padding: 8px; border-radius: var(--radius-sm); display: flex; cursor: pointer; }
+.reviews-page-header .page-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+
+.reviews-section { padding: var(--space-5) var(--space-4); }
+.reviews-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-5); }
+.reviews-header .section-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+.write-review-btn { background: var(--accent); color: var(--accent-contrast); border: none; border-radius: var(--radius-sm); padding: 8px 16px; font-size: var(--fs-sm); font-weight: var(--fw-medium); cursor: pointer; transition: filter var(--dur-fast); }
+
+.reviews-summary { background: var(--card); border-radius: var(--radius-md); padding: var(--space-5); margin-bottom: var(--space-5); }
+.rating-breakdown { display: flex; gap: var(--space-6); align-items: center; }
+.overall-rating { text-align: center; min-width: 120px; }
+.rating-number { font-size: 32px; font-weight: var(--fw-bold); display: block; }
+.rating-stars-large { margin: var(--space-2) 0; }
+.rating-stars-large .star { font-size: 20px; color: var(--border); }
+.rating-stars-large .star.filled { color: var(--warning); }
+.total-reviews { font-size: var(--fs-sm); color: var(--text-muted); }
+.rating-bars { flex: 1; }
+.rating-bar { display: flex; align-items: center; gap: var(--space-2); margin-bottom: 4px; }
+.bar-label { font-size: var(--fs-xs); color: var(--text-muted); width: 22px; }
+.bar-fill { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.bar-progress { height: 100%; background: var(--accent); transition: width var(--dur-med) var(--ease); }
+.bar-count { font-size: var(--fs-xs); color: var(--text-muted); width: 24px; text-align: right; }
+
+.reviews-list { display: flex; flex-direction: column; gap: var(--space-4); }
+.review-item { background: var(--card); border-radius: var(--radius-md); padding: var(--space-4); }
+.review-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-3); }
+.reviewer-info { display: flex; flex-direction: column; gap: 4px; }
+.reviewer-name { font-weight: var(--fw-semibold); }
+.review-rating .star { font-size: 14px; color: var(--border); }
+.review-rating .star.filled { color: var(--warning); }
+.review-date { font-size: var(--fs-xs); color: var(--text-muted); }
+.review-comment { line-height: 1.5; margin-bottom: var(--space-3); }
+.review-actions { display: flex; gap: var(--space-3); }
+.helpful-btn { background: none; border: 1px solid var(--border); color: var(--text-muted); border-radius: var(--radius-pill); padding: 6px 12px; font-size: var(--fs-xs); cursor: pointer; transition: all var(--dur-fast); }
+
+/* Write-review star selector */
+.star-picker { display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-4); }
+.star-picker button { font-size: 34px; color: var(--border); background: none; border: none; cursor: pointer; line-height: 1; }
+.star-picker button.on { color: var(--warning); }
+
+@media (hover: hover) and (pointer: fine) {
+  .reviews-page-header .back-button:hover { background: var(--surface); }
+  .write-review-btn:hover { filter: brightness(1.08); }
+  .helpful-btn:hover { border-color: var(--accent); color: var(--accent); }
+}

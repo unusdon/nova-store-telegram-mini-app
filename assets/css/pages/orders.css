@@ -1,0 +1,64 @@
+/*
+ * Nova Kit — Orders (faithful replica of the original order-history page)
+ * Header, a 4-tile stats grid, status filter tabs, and rich order cards with an item preview.
+ */
+
+.orders-header { background: var(--bg); padding: 8px var(--space-4); position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--border); }
+.orders-header .header-top { display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.orders-header .back-button, .orders-header .filter-button { background: none; border: none; color: var(--accent); cursor: pointer; padding: 8px; border-radius: var(--radius-sm); display: flex; }
+.orders-header .header-center { text-align: center; flex: 1; }
+.orders-header .page-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); }
+.orders-header .order-count { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; display: block; }
+
+.orders-content { padding: var(--space-4); }
+
+/* Stats grid */
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin-bottom: var(--space-5); }
+.stat-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); display: flex; align-items: center; gap: var(--space-3); transition: all var(--dur-fast) var(--ease); }
+.stat-icon { width: 40px; height: 40px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 18px; flex: none; }
+.stat-icon.completed { background: rgba(0,168,84,0.15); color: var(--success); }
+.stat-icon.processing { background: rgba(255,159,10,0.16); color: var(--warning); }
+.stat-icon.pending { background: rgba(100,210,255,0.16); color: var(--info); }
+.stat-icon.total { background: var(--accent-soft); color: var(--accent); }
+.stat-number { font-size: var(--fs-xl); font-weight: var(--fw-bold); line-height: 1; margin-bottom: 2px; }
+.stat-label { font-size: var(--fs-sm); color: var(--text-muted); font-weight: var(--fw-medium); }
+
+/* Filter tabs */
+.filter-tabs { display: flex; background: var(--card); border-radius: var(--radius-md); padding: 4px; margin-bottom: var(--space-5); overflow-x: auto; scrollbar-width: none; }
+.filter-tabs::-webkit-scrollbar { display: none; }
+.filter-tab { flex: 1; padding: 10px 16px; border: none; background: transparent; color: var(--text-muted); font-size: var(--fs-sm); font-weight: var(--fw-medium); border-radius: var(--radius-sm); cursor: pointer; white-space: nowrap; transition: all var(--dur-fast); }
+.filter-tab.active { background: var(--accent); color: var(--accent-contrast); }
+
+/* Order cards */
+.orders-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.order-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); cursor: pointer; transition: all var(--dur-fast) var(--ease); }
+.order-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-3); }
+.order-id { font-size: var(--fs-md); font-weight: var(--fw-semibold); margin-bottom: 4px; }
+.order-date { font-size: var(--fs-sm); color: var(--text-muted); }
+.order-status { padding: 6px 12px; border-radius: var(--radius-lg); font-size: var(--fs-xs); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.5px; }
+.order-status.pending { background: rgba(255,159,10,0.16); color: var(--warning); }
+.order-status.paid { background: rgba(100,210,255,0.16); color: var(--info); }
+.order-status.shipped { background: var(--accent-soft); color: var(--accent); }
+.order-status.delivered { background: rgba(0,168,84,0.15); color: var(--success); }
+.order-status.cancelled { background: rgba(255,69,58,0.15); color: var(--danger); }
+.order-items-preview { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+.item-images { display: flex; gap: 4px; }
+.item-image { width: 40px; height: 40px; border-radius: 6px; object-fit: cover; border: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.item-image.more { background: var(--surface); font-size: 12px; font-weight: var(--fw-semibold); color: var(--text-muted); }
+.items-summary { flex: 1; min-width: 0; }
+.items-count { font-size: var(--fs-sm); font-weight: var(--fw-medium); }
+.items-preview { font-size: var(--fs-sm); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.order-footer { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-3); border-top: 1px solid var(--border); }
+.order-total { font-size: var(--fs-lg); font-weight: var(--fw-bold); color: var(--accent); }
+.order-actions .btn { height: 36px; }
+
+.empty-orders { text-align: center; padding: var(--space-8) var(--space-5); color: var(--text-muted); }
+.empty-orders .empty-icon { font-size: 44px; }
+.empty-orders .empty-title { font-size: var(--fs-lg); font-weight: var(--fw-semibold); color: var(--text); margin: var(--space-2) 0; }
+
+@media (hover: hover) and (pointer: fine) {
+  .orders-header .back-button:hover, .orders-header .filter-button:hover { background: var(--surface); }
+  .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+  .filter-tab:hover:not(.active) { background: var(--surface); color: var(--text); }
+  .order-item:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+}
