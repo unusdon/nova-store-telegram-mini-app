@@ -12,7 +12,7 @@ No framework. No bundler. No dependencies. Open it in a browser and it runs.
 
 ### ⭐ If this saves you time, **star the repo** — it genuinely helps.
 
-**Want the production build?** &nbsp;→&nbsp; **[Get the Next.js + React + TypeScript edition on CodeCanyon](https://codecanyon.net/user/unusdon)** — same design, typed & componentised, with the full 34-page admin, priority updates & support.
+**Prefer a typed React stack?** &nbsp;→&nbsp; **[The Next.js 15 + React 19 + TypeScript edition is free here too](https://github.com/unusdon/nova-store-telegram-mini-app-nextjs)** — same design, componentised, with the full 34-page admin.
 
 </div>
 
@@ -85,21 +85,20 @@ pages coordinate by reading/writing those keys. Pages never touch storage direct
 `dataService` (`assets/js/core/store.js`), so setting `config.data.source = 'api'` +
 `config.data.apiBaseUrl` and implementing the adapter points the whole app at your backend.
 
-## 🚀 Upgrade to the Next.js edition
+## Two editions
 
-This repo is the **free, vanilla starter**. The commercial edition on CodeCanyon is the same design
-rebuilt as a modern app you can ship and scale:
+Same design, two stacks — pick the one that matches yours. Both are free.
 
-| | **This repo (free)** | **Next.js edition (paid)** |
+| | **This repo (vanilla)** | **[Next.js edition](https://github.com/unusdon/nova-store-telegram-mini-app-nextjs)** |
 |---|---|---|
 | Stack | HTML · CSS · vanilla JS | **Next.js 15 · React 19 · TypeScript · Tailwind** |
+| Build step | None | Standard Next.js |
 | Type safety | — | ✅ Fully typed |
 | Architecture | Per-page controllers | Components, hooks, config-first |
 | Admin | 34 pages | 34 pages |
-| Static export | manual | ✅ `output: export` ready |
-| Updates & support | community | ✅ Priority |
+| Static export | manual | ✅ `output: 'export'` ready |
 
-**→ [Get the Next.js + TypeScript edition on CodeCanyon](https://codecanyon.net/user/unusdon)**
+**→ [Nova Store — Next.js edition on GitHub](https://github.com/unusdon/nova-store-telegram-mini-app-nextjs)**
 
 ## License
 

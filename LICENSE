@@ -28,12 +28,12 @@ YOU MAY NOT
 In short: build YOUR product with it — don't repackage IT as a product.
 
 ------------------------------------------------------------------------------
-COMMERCIAL / PRODUCTION EDITION
+SISTER EDITION
 ------------------------------------------------------------------------------
-A production edition (Next.js + React + TypeScript + Tailwind), with the full
-admin panel, priority updates, and support, is available under a separate
-commercial license on CodeCanyon:
-  https://codecanyon.net/user/unusdon
+A Next.js 15 / React 19 / TypeScript / Tailwind edition of this kit (same
+design, componentised, fully typed) is also published free under the same
+terms:
+  https://github.com/unusdon/nova-store-telegram-mini-app-nextjs
 
 ------------------------------------------------------------------------------
 NO WARRANTY
